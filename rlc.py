@@ -2,7 +2,7 @@ import scipy.integrate as si
 import numpy as np
 import matplotlib.pyplot as plt
 
-class RLC:
+class RLC():
 
     """
     This class initializes the ode of series RLC circuit and
