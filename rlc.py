@@ -14,6 +14,17 @@ class RLC():
         self.omega = 1/np.sqrt(l*c)
         self.tint = tint
         self.ic = ic
+
+    
+    def odes(self, t, x):
+        dx = np.zeros((2))
+        dx[0] = x[1]
+        dx[1] = -self.alpha*x[1]-self.omega**2*x[0]
+        return dx
+    
+    def power(self, r, x):
+        I_rms = np.sqrt(np.mean(x**2))
+        return I_rms**2*r
         
     def solve_ivp(self, n):
         '''
@@ -34,14 +45,7 @@ class RLC():
         '''
         step = (self.tint[1]-self.tint[0])/n
 
-        def odes(t, x):
-            dx = np.zeros((2))
-            dx[0] = x[1]
-            dx[1] = -self.alpha*x[1]-self.omega**2*x[0]
-
-            return dx
-
         Xres = si.solve_ivp(
-            odes, self.tint, self.ic, method='RK45', max_step=step)
+            self.odes, self.tint, self.ic, method='RK45', max_step=step)
 
         return Xres.t, Xres.y[0], Xres.y[1]
