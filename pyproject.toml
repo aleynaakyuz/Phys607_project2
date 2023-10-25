@@ -14,6 +14,10 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
+dynamic = ["dependencies"]
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
 [project.urls]
 "Homepage" = "https://github.com/aleynaakyuz/Phys607_project2"
 "Bug Tracker" = "https://github.com/aleynaakyuz/Phys607_project2/issues"
