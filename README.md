@@ -7,3 +7,7 @@ series RLC circuit.
 To install the package run the following command
 
 `pip install ../Phys607_project2`
+
+To run the main file use following command
+
+`python src/main.py`
