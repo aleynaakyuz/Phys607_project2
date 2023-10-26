@@ -40,7 +40,7 @@ class RLC():
     
     def power(self, r, i):
         """
-        This function calculates the power of a rlc circut with 
+        This function calculates the average power of a rlc circut with 
         the formula power = I_rms^2 * r where I_rms is root-mean-square of
         current and r is resistance. 
 
@@ -49,7 +49,12 @@ class RLC():
         r: int
             resistance
         i: ndarray
-            current  
+            current 
+
+        Returns
+        --------
+        power: float
+            average  power of the circut
         """
         I_rms = np.sqrt(np.mean(i**2))
         power = I_rms**2*r

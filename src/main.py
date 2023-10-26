@@ -49,6 +49,8 @@ while m >= j:
     delta_e = abs(final_pow*t[-1] - initial_pow*t_i[-1])
     energy_l.append(delta_e)
     plt.plot(t_i,x_i,'r')
+    plt.xlabel('time')
+    plt.ylabel('current')
     plt.show()
     j = j + 1
 
