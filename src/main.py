@@ -28,7 +28,7 @@ while m >= j:
         p = Photon(T, I)
 
         omega = systemp.omega
-        wshift= np.sum(p.random_frequency()*p.coupler(a,a/3)) # photon that we sent
+        wshift= np.sum(p.random_frequency()*p.coupler(a,np.sqrt(1.18*a))) # photon that we sent
             
         systemp.omega = omega+wshift
         systemp.tint = [step, step+dt]

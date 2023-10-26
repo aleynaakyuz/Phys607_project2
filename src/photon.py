@@ -49,7 +49,7 @@ class Photon():
             N=self.N
             
         i=0
-        while i<=N:
+        while i<N:
             nu = np.random.uniform(low = .001*self.wF, high = 5*self.wF)
             B = np.random.uniform(high = 1.05*self.p_law(self.wF))
             if B<self.p_law(nu):
@@ -59,24 +59,22 @@ class Photon():
         return (f)
     
     def coupler(self, a, sigma, N = None):
-        '''
-        
-
+        """
         Parameters
         ----------
-        a : TYPE
-            DESCRIPTION.
-        sigma : TYPE
-            DESCRIPTION.
-        N : TYPE, optional
-            DESCRIPTION. The default is None.
+        a : float
+            side length of the circuit
+        sigma : float
+            standart deviation
+        N : int, optional
+            Number of samples. The default is None.
 
         Returns
         -------
         epc : TYPE
             DESCRIPTION.
 
-        '''
+        """
         xi=sf.erf(a/(2*sigma))
         if N is None:
             N= self.N
