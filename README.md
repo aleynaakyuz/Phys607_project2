@@ -1,13 +1,9 @@
 # Phys607_project2
 
-This is a python package that models 
+This is a Python package that models 
 the interaction of photons with a 
 series RLC circuit. 
 
 To install the package run the following command
 
-'pip install ../Phys607_project2'
-
-To run the main file run the following command
-
-'python src/main.py'
+`pip install ../Phys607_project2`
